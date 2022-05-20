@@ -2,3 +2,9 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
+  output:
+    ansi:
+      enabled: ALWAYS
+
+servlet:
+  context-path: /docs

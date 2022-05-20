@@ -9,11 +9,11 @@
 	</parent>
 
 	<groupId>br.com.itau</groupId>
-	<artifactId>desafio</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>desafio</name>
+	<artifactId>passoword-api</artifactId>
+	<version>0.0.1</version>
+	<name>Password API</name>
 
-	<description>Demo project for Spring Boot</description>
+	<description>API responsavel por validar as senhas</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -46,6 +46,7 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
