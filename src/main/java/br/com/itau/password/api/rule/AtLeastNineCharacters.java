@@ -1,8 +1,10 @@
 package br.com.itau.password.api.rule;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 @Slf4j
+@Component
 public class AtLeastNineCharacters implements PasswordRule {
 
     /**
