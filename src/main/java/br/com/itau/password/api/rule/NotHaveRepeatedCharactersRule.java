@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class NotHaveRepeatedCharacters implements PasswordRule {
+public class NotHaveRepeatedCharactersRule implements PasswordRule {
 
     /**
      * O método verificar se a senha contem algum caracter repetido

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class AtLeastNineCharacters implements PasswordRule {
+public class AtLeastNineCharactersRule implements PasswordRule {
 
     /**
      * O método verificar se a senha possue nove ou mais caracteres

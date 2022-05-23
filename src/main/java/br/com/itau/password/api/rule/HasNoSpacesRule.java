@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class HasNoSpaces implements PasswordRule{
+public class HasNoSpacesRule implements PasswordRule{
 
     /**
      * O método verificar se a senha não possue espaços

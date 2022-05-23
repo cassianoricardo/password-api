@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class AtLeastOneSpecialCharacter implements PasswordRule {
+public class AtLeastOneSpecialCharacterRule implements PasswordRule {
 
     /**
      * O método verificar se a senha contem ao menos dos caractere especiais ! @ # $ % ^ & * ( ) - +

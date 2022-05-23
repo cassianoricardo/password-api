@@ -7,20 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AtLeastOneUpperCaseLetterTest extends SpringUnitTest {
+class AtLeastOneUpperCaseLetterRuleTest extends SpringUnitTest {
 
     @Autowired
-    private AtLeastOneUpperCaseLetter atLeastOneUpperCaseLetter;
+    private AtLeastOneUpperCaseLetterRule atLeastOneUpperCaseLetterRule;
 
     @Test
     @DisplayName("Valida se a senha possue ao menos uma letras maiuscula")
     void validate_password_with_upper_case_letter() {
-        assertTrue(atLeastOneUpperCaseLetter.validate("Abcdefg"));
+        assertTrue(atLeastOneUpperCaseLetterRule.validate("Abcdefg"));
     }
 
     @Test
     @DisplayName("Valida se a senha não possue letras maiuscula")
     void validate_password_without_upper_case_letter() {
-        assertFalse(atLeastOneUpperCaseLetter.validate("abcdefg"));
+        assertFalse(atLeastOneUpperCaseLetterRule.validate("abcdefg"));
     }
 }

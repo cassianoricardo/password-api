@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class AtLeastOneLowerCaseLetter implements PasswordRule {
+public class AtLeastOneLowerCaseLetterRule implements PasswordRule {
 
     /**
      * o método verificar se a senha possuir ao menos uma letra minuscula

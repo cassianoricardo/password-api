@@ -15,12 +15,12 @@ import static br.com.itau.password.api.enums.PasswordRuleEnum.HAVE_NON_SPACES;
 public class PasswordService {
 
     public boolean isValid(String password){
-        var streamPasswordRules = Stream.of(AT_LEAST_ONE_UPPERCASE_LETTER.getPasswordRule(),
-                                                               AT_LEAST_ONE_LOWERCASE_LETTER.getPasswordRule(),
-                                                               AT_LEAST_NINE_CHARACTERS.getPasswordRule(),
-                                                               AT_LEAST_ONE_SPECIAL_CHARACTER.getPasswordRule(),
-                                                               HAVE_NON_REPEATING_CHARACTERS.getPasswordRule(),
-                                                               HAVE_NON_SPACES.getPasswordRule());
+        var streamPasswordRules = Stream.of(AT_LEAST_ONE_UPPERCASE_LETTER.getRule(),
+                                                               AT_LEAST_ONE_LOWERCASE_LETTER.getRule(),
+                                                               AT_LEAST_NINE_CHARACTERS.getRule(),
+                                                               AT_LEAST_ONE_SPECIAL_CHARACTER.getRule(),
+                                                               HAVE_NON_REPEATING_CHARACTERS.getRule(),
+                                                               HAVE_NON_SPACES.getRule());
 
         return streamPasswordRules.allMatch(passwordRule -> passwordRule.validate(password));
     }

@@ -8,20 +8,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-class NotHaveRepeatedCharactersTest extends SpringUnitTest {
+class NotHaveRepeatedCharactersRuleTest extends SpringUnitTest {
 
     @Autowired
-    private NotHaveRepeatedCharacters notHaveRepeatedCharacters;
+    private NotHaveRepeatedCharactersRule notHaveRepeatedCharactersRule;
 
     @Test
     @DisplayName("Valida se a senha possue caracteres repetidos")
     void validate_password_with_character_repeated() {
-        assertFalse(notHaveRepeatedCharacters.validate("abcdefgg"));
+        assertFalse(notHaveRepeatedCharactersRule.validate("abcdefgg"));
     }
 
     @Test
     @DisplayName("Valida se a senha não possue caracteres repetidos")
     void validate_password_without_character_repeated() {
-        assertTrue(notHaveRepeatedCharacters.validate("abcdefg"));
+        assertTrue(notHaveRepeatedCharactersRule.validate("abcdefg"));
     }
 }

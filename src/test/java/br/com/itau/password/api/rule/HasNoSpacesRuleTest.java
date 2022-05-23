@@ -8,20 +8,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class HasNoSpacesTest extends SpringUnitTest {
+class HasNoSpacesRuleTest extends SpringUnitTest {
 
     @Autowired
-    private HasNoSpaces hasNoSpaces;
+    private HasNoSpacesRule hasNoSpacesRule;
 
     @Test
     @DisplayName("Valida se a senha possue espaços em branco")
     void validate_password_with_white_space() {
-        assertFalse(hasNoSpaces.validate("abc defg"));
+        assertFalse(hasNoSpacesRule.validate("abc defg"));
     }
 
     @Test
     @DisplayName("Valida se a senha possue não espaços em branco")
     void validate_password_without_white_space() {
-        assertTrue(hasNoSpaces.validate("abcdefgg"));
+        assertTrue(hasNoSpacesRule.validate("abcdefgg"));
     }
 }
