@@ -2,29 +2,27 @@ package br.com.itau.password.api.controller;
 
 import br.com.itau.password.api.controller.docs.PasswordControllerDocs;
 import br.com.itau.password.api.service.PasswordService;
-import io.swagger.annotations.ApiOperation;
+import br.com.itau.password.api.util.Constantes;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
 
-import static br.com.itau.password.api.controller.PasswordController.PATH_URL_PREFIX;
+import static br.com.itau.password.api.util.Constantes.PASSWORD;
+import static br.com.itau.password.api.util.Constantes.PATH_IS_VALID;
+import static br.com.itau.password.api.util.Constantes.PATH_PASSWORD;
 
 @RestController
-@RequestMapping(PATH_URL_PREFIX)
+@RequestMapping(PATH_PASSWORD)
 @AllArgsConstructor
 public class PasswordController implements PasswordControllerDocs {
 
-    public static final String PATH_URL_PREFIX = "/password";
-    public static final String IS_VALID = "/isValid";
-
     private PasswordService passwordService;
 
-    @GetMapping(IS_VALID)
-    public boolean isValid(@PathParam("password") String password) {
+    @GetMapping(PATH_IS_VALID)
+    public boolean isValid(@PathParam(PASSWORD) String password) {
         return passwordService.isValid(password);
     }
 }
