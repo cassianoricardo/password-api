@@ -1,6 +1,6 @@
-package br.com.itau.password.api.rule;
+package br.com.itau.password.api.app.rule;
 
-import br.com.itau.password.api.SpringUnitTest;
+import br.com.itau.password.api.SpringTest;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class AtLeastOneSpecialCharacterRuleTest extends SpringUnitTest {
+class AtLeastOneSpecialCharacterRuleTest extends SpringTest {
 
     @Autowired
     private AtLeastOneSpecialCharacterRule atLeastOneSpecialCharacterRule;

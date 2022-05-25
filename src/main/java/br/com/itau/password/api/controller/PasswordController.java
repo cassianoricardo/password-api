@@ -1,8 +1,7 @@
 package br.com.itau.password.api.controller;
 
 import br.com.itau.password.api.controller.docs.PasswordControllerDocs;
-import br.com.itau.password.api.service.PasswordService;
-import br.com.itau.password.api.util.Constantes;
+import br.com.itau.password.api.app.service.PasswordService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

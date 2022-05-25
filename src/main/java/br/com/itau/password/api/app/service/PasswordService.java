@@ -1,4 +1,4 @@
-package br.com.itau.password.api.service;
+package br.com.itau.password.api.app.service;
 
 import org.springframework.stereotype.Service;
 

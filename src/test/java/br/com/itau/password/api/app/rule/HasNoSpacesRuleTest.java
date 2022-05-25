@@ -1,6 +1,6 @@
-package br.com.itau.password.api.rule;
+package br.com.itau.password.api.app.rule;
 
-import br.com.itau.password.api.SpringUnitTest;
+import br.com.itau.password.api.SpringTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class HasNoSpacesRuleTest extends SpringUnitTest {
+class HasNoSpacesRuleTest extends SpringTest {
 
     @Autowired
     private HasNoSpacesRule hasNoSpacesRule;

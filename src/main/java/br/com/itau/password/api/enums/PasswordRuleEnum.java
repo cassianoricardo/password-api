@@ -1,12 +1,12 @@
 package br.com.itau.password.api.enums;
 
-import br.com.itau.password.api.rule.HasNoSpacesRule;
-import br.com.itau.password.api.rule.AtLeastNineCharactersRule;
-import br.com.itau.password.api.rule.AtLeastOneLowerCaseLetterRule;
-import br.com.itau.password.api.rule.AtLeastOneSpecialCharacterRule;
-import br.com.itau.password.api.rule.AtLeastOneUpperCaseLetterRule;
-import br.com.itau.password.api.rule.NotHaveRepeatedCharactersRule;
-import br.com.itau.password.api.rule.PasswordRule;
+import br.com.itau.password.api.app.rule.HasNoSpacesRule;
+import br.com.itau.password.api.app.rule.AtLeastNineCharactersRule;
+import br.com.itau.password.api.app.rule.AtLeastOneLowerCaseLetterRule;
+import br.com.itau.password.api.app.rule.AtLeastOneSpecialCharacterRule;
+import br.com.itau.password.api.app.rule.AtLeastOneUpperCaseLetterRule;
+import br.com.itau.password.api.app.rule.NotHaveRepeatedCharactersRule;
+import br.com.itau.password.api.app.rule.PasswordRule;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

@@ -1,6 +1,6 @@
-package br.com.itau.password.api.controller;
+package br.com.itau.password.api.integration;
 
-import br.com.itau.password.api.SpringBootIntegrationTest;
+import br.com.itau.password.api.SpringTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import static br.com.itau.password.api.util.Constantes.PATH_PASSWORD;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class PasswordControllerIntegrationTest extends SpringBootIntegrationTest {
+public class PasswordApiIntegrationTest extends SpringTest {
 
     @Autowired
     private MockMvc mockMvc;

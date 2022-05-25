@@ -1,13 +1,13 @@
-package br.com.itau.password.api.service;
+package br.com.itau.password.api.app.service;
 
-import br.com.itau.password.api.SpringUnitTest;
+import br.com.itau.password.api.SpringTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class PasswordServiceTest extends SpringUnitTest {
+class PasswordServiceTest extends SpringTest {
 
     @Autowired
     private PasswordService passwordService;
