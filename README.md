@@ -37,7 +37,7 @@ IsValid("AbTp9!fok") // true
 
 ## Pré requisitos
 
-- [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- [JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 - [Apache Maven 3.8.5](https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/)
 - [Git](https://git-scm.com/downloads)
 
@@ -68,22 +68,26 @@ IsValid("AbTp9!fok") // true
 
 ### Execução do Password API
 
-#### Eclipse:
-
-#### Importando o projeto:
+#### Importando o projeto no Eclipse:
 
 - Menu "File", selecione "Import"
 - Em "Import" Expanda a pasta "Maven" e selecione a opção "Existing Maven Projects" e clique em "Next"
 - Em "Import Maven Projects" clique em "browse..." e selecione o pasta do projeto "Password API" e clique em "Finish"
+- Ainda no Eclipse, clique com o botão direito do mouse sob o projeto "Password API" selecione "Run As" e depois "Maven clean"
+  - "Run As" e depois "Maven install"
 
-#### Baixando as dependencias
+#### Importando o projeto no Intellij:
 
-Ainda no Eclipse, clique com o botão direito do mouse sob o projeto "Password API" selecione:
+- Acesse o Menu "File", depois clique em "Open"
+- Em "Open File or Project", selecione o diretório do "Password API"
+- Clique em "Load Maven Project"
+- Acesse a perspectiva [Maven] do lado direito da tela, e depois clique em um icone de "M" e selecione: "mvn clean" aguarde o finalização no consolse e depois em "mvn install"
 
-- "Run As" e depois "Maven clean"
-- "Run As" e depois "Maven install"
+URL de acesso ao swagger: http://localhost:8080/swagger-ui/index.html
 
 #### Subindo a API
+
+Esse passo é comum para as IDE Eclipse e Intellij:
 
 - Abra a classe App.java no diretório:
   - src/main/java/br/com/itau/password/api
@@ -91,6 +95,7 @@ Ainda no Eclipse, clique com o botão direito do mouse sob o projeto "Password A
 - Após subir a Api será apresentado no console a URL do Swagger do Password API
   - http://localhost:8080/swagger-ui/index.html
 
-#### Intellij:
 
-...
+# Direito autoral
+
+Lançado sob o Apache License 2.0. Ver o [LICENSE](https://github.com/cassianoricardo/password-api/blob/main/LICENSE) arquivo.
