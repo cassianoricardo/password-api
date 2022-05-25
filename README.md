@@ -27,14 +27,6 @@ IsValid("AbTp9 fok") // false
 IsValid("AbTp9!fok") // true
 ```
 
-## Tecnologias presentes na API:
-
-- Spring boot 2.6.7;
-- Swagger 3;
-- Lombok;
-- JUnit 5;
-- MockMvc
-
 ## Pré requisitos
 
 - [JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
@@ -59,24 +51,24 @@ IsValid("AbTp9!fok") // true
 - Em "Propriedades do sistema" Clique "Ok".
 
 
-### Clonando o projeto
+## Clonando o projeto
 
 - Abra a sua pasta de repositório, clique com o botão direito do mouse e selecione a opção "Git Bash"
 - Execute o comando abaixo:
   - git clone https://github.com/cassianoricardo/password-api.git
 
 
-### Execução do Password API
+## Importando o projeto
 
-#### Importando o projeto no Eclipse:
+### Eclipse:
 
-- Menu "File", selecione "Import"
+- Acesse o Menu "File", selecione "Import"
 - Em "Import" Expanda a pasta "Maven" e selecione a opção "Existing Maven Projects" e clique em "Next"
 - Em "Import Maven Projects" clique em "browse..." e selecione o pasta do projeto "Password API" e clique em "Finish"
 - Ainda no Eclipse, clique com o botão direito do mouse sob o projeto "Password API" selecione "Run As" e depois "Maven clean"
   - "Run As" e depois "Maven install"
 
-#### Importando o projeto no Intellij:
+### Intellij:
 
 - Acesse o Menu "File", depois clique em "Open"
 - Em "Open File or Project", selecione o diretório do "Password API"
@@ -85,7 +77,7 @@ IsValid("AbTp9!fok") // true
 
 URL de acesso ao swagger: http://localhost:8080/swagger-ui/index.html
 
-#### Subindo a API
+## Executando o projeto
 
 Esse passo é comum para as IDE Eclipse e Intellij:
 
@@ -95,7 +87,15 @@ Esse passo é comum para as IDE Eclipse e Intellij:
 - Após subir a Api será apresentado no console a URL do Swagger do Password API
   - http://localhost:8080/swagger-ui/index.html
 
+### Tecnologias presentes na API:
 
-# Direito autoral
+- Spring boot 2.6.7;
+- Swagger 3;
+- Lombok;
+- JUnit 5;
+- MockMvc
+- Regex
+
+### Direito autoral
 
 Lançado sob o Apache License 2.0. Ver o [LICENSE](https://github.com/cassianoricardo/password-api/blob/main/LICENSE) arquivo.
