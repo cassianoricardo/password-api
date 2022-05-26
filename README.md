@@ -93,7 +93,3 @@ Esse passo é comum para as IDE Eclipse e Intellij:
 - JUnit 5;
 - MockMvc
 - Regex
-
-### Direito autoral
-
-Lançado sob o Apache License 2.0. Ver o [LICENSE](https://github.com/cassianoricardo/password-api/blob/main/LICENSE) arquivo.
