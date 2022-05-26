@@ -23,8 +23,6 @@ public class PasswordApiIntegrationTest extends SpringTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    private ObjectMapper mapper;
 
     static Stream<Arguments> passwordsAndExpectedOutputProvider() {
         return Stream.of(
@@ -41,11 +39,11 @@ public class PasswordApiIntegrationTest extends SpringTest {
 
     @MethodSource("passwordsAndExpectedOutputProvider")
     @ParameterizedTest(name = "Verifica se a senha: \"{0}\" é {2}")
-    public void isValid(String password, boolean outputExpected, String validOrInvalidInDescription) throws Exception {
-        final String stringJson = mapper.writeValueAsString(PasswordDTO.builder().password(password).build());
+    void isValid(String password, boolean outputExpected, String validOrInvalidInDescription) throws Exception {
+        final String stringJson = asJsonString(PasswordDTO.builder().password(password).build());
 
         mockMvc.perform(post(PATH_PASSWORD.concat(PATH_IS_VALID))
-                        .content(asJsonString(PasswordDTO.builder().password(password).build()))
+                        .content(stringJson)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(String.valueOf(outputExpected)));
