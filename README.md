@@ -2,7 +2,7 @@
 
 API REST responsável por validar as senhas informadas pelo usuário.
 
-Será considerada uma senha válida aquela atender aos seguintes critérios abaixo:
+Considere uma senha sendo válida quando a mesma possuir as seguintes definições:
 
 - Nove ou mais caracteres
 - Ao menos 1 dígito
