@@ -14,7 +14,6 @@ import java.util.stream.Stream;
 
 import static br.com.itau.password.api.util.Constantes.PATH_IS_VALID;
 import static br.com.itau.password.api.util.Constantes.PATH_PASSWORD;
-import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -27,46 +26,27 @@ public class PasswordApiIntegrationTest extends SpringTest {
     @Autowired
     private ObjectMapper mapper;
 
-    static Stream<Arguments> passwordsAndExpectedOutputFailProvider() {
+    static Stream<Arguments> passwordsAndExpectedOutputProvider() {
         return Stream.of(
-                arguments("", false),
-                arguments("aa", false),
-                arguments("ab#", false),
-                arguments("AAAbbbCc*", false),
-                arguments("AbTp9!foo", false),
-                arguments("AbTp9!foA", false),
-                arguments("AbTp9 fok", false)
+                Arguments.of("", false, "inválida"),
+                Arguments.of("aa", false, "inválida"),
+                Arguments.of("ab#", false, "inválida"),
+                Arguments.of("AAAbbbCc*", false, "inválida"),
+                Arguments.of("AbTp9!foo", false, "inválida"),
+                Arguments.of("AbTp9!foA", false, "inválida"),
+                Arguments.of("AbTp9 fok", false, "inválida"),
+                Arguments.of("Senha123*", true, "válida")
         );
     }
 
-    static Stream<Arguments> passwordsAndExpectedOutputSuccessProvider() {
-        return Stream.of(
-                arguments("AbTp9!fok", true)
-        );
-    }
-
-
-    @MethodSource("passwordsAndExpectedOutputFailProvider")
-    @ParameterizedTest(name = "Verifica se a senha: \"{0}\" é inválida")
-    public void invalidPassword(String password, boolean outputExpected) throws Exception {
+    @MethodSource("passwordsAndExpectedOutputProvider")
+    @ParameterizedTest(name = "Verifica se a senha: \"{0}\" é {2}")
+    public void isValid(String password, boolean outputExpected, String validOrInvalidInDescription) throws Exception {
         final String stringJson = mapper.writeValueAsString(PasswordDTO.builder().password(password).build());
 
         mockMvc.perform(post(PATH_PASSWORD.concat(PATH_IS_VALID))
                         .content(asJsonString(PasswordDTO.builder().password(password).build()))
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string(String.valueOf(outputExpected)));
-    }
-
-
-    @MethodSource("passwordsAndExpectedOutputSuccessProvider")
-    @ParameterizedTest(name = "Verifica se a senha: \"{0}\" é válida")
-    public void validPassword(String password, boolean outputExpected) throws Exception {
-        final String stringJson = mapper.writeValueAsString(PasswordDTO.builder().password(password).build());
-
-        mockMvc.perform(post(PATH_PASSWORD.concat(PATH_IS_VALID))
-                        .content(asJsonString(PasswordDTO.builder().password(password).build()))
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk())
                 .andExpect(content().string(String.valueOf(outputExpected)));
     }
