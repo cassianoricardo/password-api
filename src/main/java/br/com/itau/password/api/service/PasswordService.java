@@ -1,5 +1,6 @@
-package br.com.itau.password.api.app.service;
+package br.com.itau.password.api.service;
 
+import br.com.itau.password.api.dto.PasswordDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.Stream;
@@ -14,7 +15,7 @@ import static br.com.itau.password.api.enums.PasswordRuleEnum.HAVE_NON_SPACES;
 @Service
 public class PasswordService {
 
-    public boolean isValid(String password){
+    public boolean isValid(PasswordDTO passwordDTO){
         var streamPasswordRules = Stream.of(AT_LEAST_ONE_UPPERCASE_LETTER.getRule(),
                                                                AT_LEAST_ONE_LOWERCASE_LETTER.getRule(),
                                                                AT_LEAST_NINE_CHARACTERS.getRule(),
@@ -22,6 +23,6 @@ public class PasswordService {
                                                                HAVE_NON_REPEATING_CHARACTERS.getRule(),
                                                                HAVE_NON_SPACES.getRule());
 
-        return streamPasswordRules.allMatch(passwordRule -> passwordRule.validate(password));
+        return streamPasswordRules.allMatch(passwordRule -> passwordRule.validate(passwordDTO.getPassword()));
     }
 }

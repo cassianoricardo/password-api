@@ -1,4 +1,4 @@
-package br.com.itau.password.api.app.rule;
+package br.com.itau.password.api.rule;
 
 public interface PasswordRule {
 

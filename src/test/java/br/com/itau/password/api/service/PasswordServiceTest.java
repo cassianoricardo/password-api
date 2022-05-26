@@ -1,6 +1,7 @@
-package br.com.itau.password.api.app.service;
+package br.com.itau.password.api.service;
 
 import br.com.itau.password.api.SpringTest;
+import br.com.itau.password.api.dto.PasswordDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,11 +15,11 @@ class PasswordServiceTest extends SpringTest {
 
     @Test
     void isValid_with_all_character_valid() {
-        assertTrue(passwordService.isValid("Abcd1234*"));
+        assertTrue(passwordService.isValid(PasswordDTO.builder().password("Abcd1234*").build()));
     }
 
     @Test
     void isValid_with_one_character_is_not_valid() {
-        assertFalse(passwordService.isValid("Abcd1234* "));
+        assertFalse(passwordService.isValid(PasswordDTO.builder().password("Abcd1234* ").build()));
     }
 }

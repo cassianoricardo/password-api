@@ -1,5 +1,6 @@
 package br.com.itau.password.api.controller.docs;
 
+import br.com.itau.password.api.dto.PasswordDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -21,5 +22,5 @@ public interface PasswordControllerDocs {
                             implementation = HttpStatus.class))))
             })
     boolean isValid(@RequestBody(content = @Content(schema = @Schema(
-            implementation = Boolean.class))) String password);
+            implementation = Boolean.class))) PasswordDTO passwordDTO);
 }
